@@ -98,6 +98,75 @@ local plugins = {
     end
   },
 
+ {
+    'grzegorzszczepanek/gamify.nvim',
+    lazy = false,
+    config = function()
+      require('gamify')
+    end,
+  },
+
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
+  },
+
+  {
+    'rgroli/other.nvim',
+    lazy = false,
+    config = function ()
+      require("other-nvim").setup({
+      mappings = {
+          -- builtin mappings
+          "livewire",
+          "angular",
+          "laravel",
+          "rails",
+          "golang",
+          "python",
+          "react",
+          "rust",
+          -- custom mapping
+          -- {
+          --     pattern = "/path/to/file/src/app/(.*)/.*.ext$",
+          --     target = "/path/to/file/src/view/%1/",
+          --     transformer = "lowercase"
+          -- }
+      },
+      transformers = {
+          -- defining a custom transformer
+          lowercase = function (inputString)
+              return inputString:lower()
+          end
+      },
+      style = {
+          -- How the plugin paints its window borders
+          -- Allowed values are none, single, double, rounded, solid and shadow
+          border = "solid",
+
+          -- Column seperator for the window
+          seperator = "|",
+
+    -- width of the window in percent. e.g. 0.5 is 50%, 1.0 is 100%
+    width = 0.7,
+
+    -- min height in rows.
+    -- when more columns are needed this value is extended automatically
+    minHeight = 2
+      },
+  })
+    end
+  }
+
 }
 
 return plugins

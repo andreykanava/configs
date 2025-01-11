@@ -1,3 +1,4 @@
+
 local M = {}
 
 M.general = {
@@ -19,13 +20,12 @@ M.general = {
     ["<leader>db"] = { ':Nvdash<CR>', "Return to dashboard" },
   },
   i = {
+    ["<C-c>"] = { '<Esc>"+y', "Copy to clipboard" },
+    ["<C-v>"] = { '<Esc>"+p', "Paste from clipboard" },
     ["<C-z>"] = { '<C-o>u', "Undo" },
     ["<C-S-z>"] = { '<C-o><C-r>', "Redo" },
     ["<C-a>"] = { '<Esc>ggVG', "Select all text" }, -- Map Ctrl+a to select all in insert mode
   },
 }
 
-
-
 return M
-

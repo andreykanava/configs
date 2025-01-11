@@ -145,7 +145,7 @@ M.ui = {
     },
 
 
-      { "  File Browser", "", function() vim.cmd("NvimTreeToggle") end },
+      { "  File Browser", "", function() vim.cmd("cd ~") vim.cmd("NvimTreeToggle") end },
       { "  New Directory", "", function()
          local input = vim.fn.input("Enter new directory name: ", "", "file")
           if input and input ~= "" then
@@ -163,6 +163,7 @@ M.ui = {
           end
         end },
       { "  Edit Config", "", ":cd ~/.config/nvim | e lua/custom/chadrc.lua" },
+      { "󰺶  Gamify", "", "Gamify"},
       { "  Themes", "", "Telescope themes" },
       { "  Mappings", "", "NvCheatsheet" },
       { "  Quit", "", ":qa" },
