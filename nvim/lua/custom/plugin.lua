@@ -165,6 +165,15 @@ local plugins = {
       },
   })
     end
+  },
+
+  {
+    "CRAG666/code_runner.nvim",
+    lazy = false,
+     config = function()
+      require("custom.configs.coderunner")
+    end,
+
   }
 
 }
